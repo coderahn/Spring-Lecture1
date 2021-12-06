@@ -14,7 +14,7 @@ public class HelloController {
         model.addAttribute("data", "hello!data from model!");
         //리턴값을 다음과 같이 문자로 반환하면, viewResolver가 화면을 찾아서 처리한다.
         //스프링부트 템플릿엔진 기본 viewName매핑
-        //resources:templates/ + {viewName} + .html
+        //resources:templates/ + {viewName} + .html 
         return "hello";
     }
 }
