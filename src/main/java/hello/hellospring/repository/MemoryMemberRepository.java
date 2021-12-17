@@ -5,7 +5,6 @@ import java.util.*;
 import hello.hellospring.domain.Member;
 import org.springframework.stereotype.Repository;
 
-@Repository
 public class MemoryMemberRepository implements MemberRepository {
     //실무에서 동시성 문제로 ConcurrentHashMap 써야할 수도 있으나 예제라서 HashMap 그냥 사용
     private static Map<Long, Member> store = new HashMap<>();
