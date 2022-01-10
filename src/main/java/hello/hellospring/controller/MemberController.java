@@ -19,11 +19,13 @@ public class MemberController {
         this.memberService = memberService;
     }
     
+    //회원가입 폼
     @GetMapping("/members/new")
     public String createForm() {
         return "members/createMemberForm";
     }
 
+    //회원가입
     @PostMapping("/members/new")
     public String createForm(MemberForm form) {
         Member member = new Member();
@@ -35,9 +37,12 @@ public class MemberController {
         return "redirect:/";
     }
 
+    //회원 리스트 조회
     @GetMapping("/members")
     public String list(Model model) {
         List<Member> members = memberService.findMembers();
+        
+        //HTML에 뿌려줄 데이터 model에 담기
         model.addAttribute("members", members);
         return "/members/memberList";
     }
